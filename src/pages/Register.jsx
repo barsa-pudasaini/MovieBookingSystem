@@ -1,21 +1,28 @@
 import { Link, useNavigate } from "react-router-dom"
 import { Mail, Lock, User } from "lucide-react"
+import { useState } from "react"
 
 export default function Register() {
     const navigate = useNavigate()
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
 
     const handleRegister = (e) => {
         e.preventDefault()
 
-        
+        if (password.length < 8) {
+            setError("Password must be at least 8 characters")
+            return
+        }
+
+        setError("")
+
         const user = {
             name: "NewUser",
             role: "user"
         }
 
         localStorage.setItem("user", JSON.stringify(user))
-
-        // after register → login/dashboard
         navigate("/")
         window.location.reload()
     }
@@ -34,7 +41,7 @@ export default function Register() {
                         <User className="absolute left-3 top-3 text-purple-400" size={18} />
                         <input
                             placeholder="Username"
-                            className="w-full bg-black border border-purple-800 py-2 pl-10 pr-4 rounded-lg outline-none"
+                            className="w-full bg-black border border-purple-800 py-2 pl-10 rounded-lg outline-none"
                             required
                         />
                     </div>
@@ -44,7 +51,7 @@ export default function Register() {
                         <input
                             type="email"
                             placeholder="Email"
-                            className="w-full bg-black border border-purple-800 py-2 pl-10 pr-4 rounded-lg outline-none"
+                            className="w-full bg-black border border-purple-800 py-2 pl-10 rounded-lg outline-none"
                             required
                         />
                     </div>
@@ -53,15 +60,21 @@ export default function Register() {
                         <Lock className="absolute left-3 top-3 text-purple-400" size={18} />
                         <input
                             type="password"
-                            placeholder="Password"
-                            className="w-full bg-black border border-purple-800 py-2 pl-10 pr-4 rounded-lg outline-none"
+                            placeholder="Password (min 8 chars)"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full bg-black border border-purple-800 py-2 pl-10 rounded-lg outline-none"
                             required
                         />
                     </div>
 
+                    {error && (
+                        <p className="text-red-400 text-sm">{error}</p>
+                    )}
+
                     <button
                         type="submit"
-                        className="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg font-semibold transition"
+                        className="w-full bg-purple-600 hover:bg-purple-700 py-2 rounded-lg font-semibold"
                     >
                         Register
                     </button>

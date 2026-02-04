@@ -7,7 +7,8 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyCH4WfgDAJxXYXLV8pGE9E73IM9QwoBv1g",
+    //apiKey: "AIzaSyCH4WfgDAJxXYXLV8pGE9E73IM9QwoBv1g",
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
     authDomain: "moviebookingsystem-7ea47.firebaseapp.com",
     projectId: "moviebookingsystem-7ea47",
     storageBucket: "moviebookingsystem-7ea47.firebasestorage.app",
