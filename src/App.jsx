@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import MyBooking from './pages/MyBooking'
 import Footer from './pages/Footer'
+import Contact from './pages/Contact'
 import { seedFirestore } from './seed/seedData'
 const App = () => {
   useEffect(() => {
@@ -25,7 +26,7 @@ const App = () => {
         <Route path="/movie/:id" element={<MovieDetails />} />
         <Route path='/my-booking' element={<MyBooking />} />
         <Route path='/footer' element={<Footer />} />
-        
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer />
     </>

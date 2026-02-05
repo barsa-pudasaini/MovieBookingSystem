@@ -1,9 +1,9 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { Menu, X, Film, Search } from "lucide-react"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, Film, Search } from "lucide-react";
 
 export default function Navbar() {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
     return (
         <nav className="bg-black border-b border-purple-800 sticky top-0 z-50">
@@ -18,9 +18,9 @@ export default function Navbar() {
 
                     <div className="hidden md:flex gap-6 text-gray-300">
                         <Link to="/movies" className="hover:text-purple-400">Movies</Link>
-                        <Link to="#" className="hover:text-purple-400">Category</Link>
-                        <Link to="#" className="hover:text-purple-400">Genre</Link>
-                        <Link to="#" className="hover:text-purple-400">Contact</Link>
+                        <Link to="/category" className="hover:text-purple-400">Category</Link>
+                        <Link to="/genre" className="hover:text-purple-400">Genre</Link>
+                        <Link to="/contact" className="hover:text-purple-400">Contact</Link>
                     </div>
                 </div>
 
@@ -28,10 +28,7 @@ export default function Navbar() {
                 <div className="hidden md:flex items-center gap-4">
                     {/* SEARCH */}
                     <div className="relative">
-                        <Search
-                            size={18}
-                            className="absolute left-3 top-2.5 text-purple-400"
-                        />
+                        <Search size={18} className="absolute left-3 top-2.5 text-purple-400" />
                         <input
                             placeholder="Search movies..."
                             className="bg-zinc-900 border border-purple-800 text-white pl-10 pr-4 py-2 rounded-full text-sm outline-none focus:ring-2 focus:ring-purple-600"
@@ -56,16 +53,13 @@ export default function Navbar() {
             {/* MOBILE MENU */}
             {open && (
                 <div className="md:hidden bg-black px-6 pb-6 space-y-4 text-gray-300">
-                    <Link to="/movies">Movies</Link>
-                    <Link to="#">Category</Link>
-                    <Link to="#">Genre</Link>
-                    <Link to="#">Contact</Link>
+                    <Link to="/movies" className="block hover:text-purple-400 transition">Movies</Link>
+                    <Link to="/category" className="block hover:text-purple-400 transition">Category</Link>
+                    <Link to="/genre" className="block hover:text-purple-400 transition">Genre</Link>
+                    <Link to="/contact" className="block hover:text-purple-400 transition">Contact</Link>
 
                     <div className="relative">
-                        <Search
-                            size={18}
-                            className="absolute left-3 top-2.5 text-purple-400"
-                        />
+                        <Search size={18} className="absolute left-3 top-2.5 text-purple-400" />
                         <input
                             placeholder="Search movies..."
                             className="w-full bg-zinc-900 border border-purple-800 text-white pl-10 py-2 rounded-full outline-none"
@@ -74,12 +68,12 @@ export default function Navbar() {
 
                     <Link
                         to="/login"
-                        className="block text-center bg-purple-600 text-white py-2 rounded-full"
+                        className="block text-center bg-purple-600 text-white py-2 rounded-full hover:bg-purple-700 transition"
                     >
                         Login
                     </Link>
                 </div>
             )}
         </nav>
-    )
+    );
 }

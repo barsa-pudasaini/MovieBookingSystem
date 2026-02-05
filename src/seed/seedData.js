@@ -7,8 +7,8 @@ import {
 } from "firebase/firestore";
 import { db } from "../config/Firebase";
 
-/* ================= MOVIES (20 ITEMS) ================= */
-const MOVIES = [
+/* ================= MOVIES (20 UNIQUE ITEMS) ================= */
+export const MOVIES = [
     {
         id: "movie_1",
         title: "Inception",
@@ -16,8 +16,9 @@ const MOVIES = [
         rating: 8.8,
         duration: 148,
         status: "now_showing",
-        synopsis: "A thief enters dream worlds.",
-        poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg"
+        synopsis: "A thief enters dream worlds to steal secrets.",
+        poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
+        trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     },
     {
         id: "movie_2",
@@ -26,8 +27,9 @@ const MOVIES = [
         rating: 9.0,
         duration: 152,
         status: "now_showing",
-        synopsis: "Batman vs Joker.",
-        poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg"
+        synopsis: "Batman vs Joker in Gotham City.",
+        poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+        trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
     },
     {
         id: "movie_3",
@@ -36,8 +38,9 @@ const MOVIES = [
         rating: 8.6,
         duration: 169,
         status: "now_showing",
-        synopsis: "Journey through space and time.",
-        poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+        synopsis: "Astronauts journey through a wormhole to save humanity.",
+        poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+        trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
     {
         id: "movie_4",
@@ -46,8 +49,9 @@ const MOVIES = [
         rating: 8.4,
         duration: 181,
         status: "now_showing",
-        synopsis: "Final Avengers battle.",
-        poster: "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg"
+        synopsis: "The Avengers unite for a final battle to undo Thanos' snap.",
+        poster: "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
+        trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
     },
     {
         id: "movie_5",
@@ -56,8 +60,9 @@ const MOVIES = [
         rating: 8.5,
         duration: 132,
         status: "now_showing",
-        synopsis: "Dark class struggle.",
-        poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg"
+        synopsis: "A poor family infiltrates a wealthy household.",
+        poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+        trailer: "https://www.youtube.com/embed/5xH0HfJHsaY"
     },
     {
         id: "movie_6",
@@ -66,8 +71,9 @@ const MOVIES = [
         rating: 8.4,
         duration: 122,
         status: "now_showing",
-        synopsis: "Rise of Joker.",
-        poster: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+        synopsis: "A comedian descends into madness in Gotham City.",
+        poster: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
+        trailer: "https://www.youtube.com/embed/zAGVQLHvwOY"
     },
     {
         id: "movie_7",
@@ -76,59 +82,79 @@ const MOVIES = [
         rating: 8.1,
         duration: 155,
         status: "now_showing",
-        synopsis: "Desert planet politics.",
-        poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
+        synopsis: "Paul Atreides becomes central to a galactic war over Arrakis.",
+        poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
+        trailer: "https://www.youtube.com/embed/n9xhJrPXop4"
     },
     {
         id: "movie_8",
-        title: "The Matrix",
-        genre: ["Sci-Fi"],
-        rating: 8.7,
-        duration: 136,
-        status: "now_showing",
-        synopsis: "Reality is a lie.",
-        poster: "https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg"
-    },
-    {
-        id: "movie_9",
         title: "Titanic",
         genre: ["Romance"],
         rating: 7.9,
         duration: 195,
         status: "now_showing",
-        synopsis: "Love on doomed ship.",
-        poster: "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+        synopsis: "Love story aboard the ill-fated Titanic.",
+        poster: "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
+        trailer: "https://www.youtube.com/embed/kVrqfYjkTdQ"
     },
     {
-        id: "movie_10",
+        id: "movie_9",
         title: "Oppenheimer",
         genre: ["History"],
         rating: 8.9,
         duration: 180,
         status: "now_showing",
-        synopsis: "Father of atomic bomb.",
-        poster: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg"
+        synopsis: "The story of J. Robert Oppenheimer and the atomic bomb.",
+        poster: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg",
+        trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
+    },
+    {
+        id: "movie_10",
+        title: "The Batman",
+        genre: ["Action"],
+        rating: 8.3,
+        duration: 156,
+        status: "now_showing",
+        synopsis: "Batman investigates corruption in Gotham City.",
+        poster: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+        trailer: "https://www.youtube.com/embed/mqqft2x_Aa4"
+    },
+    {
+        id: "movie_11",
+        title: "Doctor Strange",
+        genre: ["Action"],
+        rating: 7.5,
+        duration: 115,
+        status: "now_showing",
+        synopsis: "A neurosurgeon discovers the hidden world of magic.",
+        poster: "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+        trailer: "https://www.youtube.com/embed/HSzx-zryEgM"
+    },
+    {
+        id: "movie_12",
+        title: "Spider-Man: No Way Home",
+        genre: ["Action"],
+        rating: 8.7,
+        duration: 148,
+        status: "now_showing",
+        synopsis: "Peter Parker faces multiverse chaos after identity is revealed.",
+        poster: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+        trailer: "https://www.youtube.com/embed/JfVOs4VSpmA"
     }
+    
 ];
 
-// duplicate more to reach 20
-for (let i = 11; i <= 20; i++) {
-    MOVIES.push({
-        ...MOVIES[i - 11],
-        id: `movie_${i}`,
-        title: `${MOVIES[i - 11].title} ${i}`
-    });
-}
+
 
 /* ================= THEATRES ================= */
-const THEATRES = [
+export const THEATRES = [
     { id: "theatre_1", name: "Grand Cinema", location: "Downtown" },
     { id: "theatre_2", name: "City Plex", location: "Mall Road" },
     { id: "theatre_3", name: "IMAX Arena", location: "Tech Park" }
 ];
 
 /* ================= SHOWTIMES ================= */
-const SHOWTIMES = MOVIES.slice(0, 10).map((movie, index) => ({
+export const SHOWTIMES = MOVIES.slice(0, 10).map((movie, index) => ({
     id: `show_${index + 1}`,
     movieId: movie.id,
     theatreId: THEATRES[index % 3].id,
@@ -168,8 +194,7 @@ export async function seedFirestore() {
 
     console.log("✅ Old data removed");
 
-    for (const movie of MOVIES)
-        await setDoc(doc(db, "movies", movie.id), movie);
+    for (const movie of MOVIES) await setDoc(doc(db, "movies", movie.id), movie);
 
     for (const theatre of THEATRES)
         await setDoc(doc(db, "theatres", theatre.id), theatre);
