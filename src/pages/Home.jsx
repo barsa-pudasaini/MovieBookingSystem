@@ -104,14 +104,13 @@ export default function Home() {
                                 <p className="text-gray-400 text-xs mb-3">
                                     Rating: {movie.rating}
                                 </p>
-
                                 <Link
-                                    to={`/movies/${movie.id}`}
+                                    to={`/movie/${movie.id}`}
                                     className="block text-center bg-purple-600 hover:bg-purple-700 py-2 rounded-lg text-sm"
                                 >
-                                    
                                     Book Now
                                 </Link>
+
                             </div>
                         </div>
                     ))}

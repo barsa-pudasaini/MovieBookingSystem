@@ -1,10 +1,10 @@
-import { Mail, Lock, Chrome, Phone, User } from "lucide-react"
+import { Mail, Lock, Chrome, Phone } from "lucide-react"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
 export default function Login() {
     const navigate = useNavigate()
-    const [loginType, setLoginType] = useState("email") // email | phone
+    const [loginType, setLoginType] = useState("email")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
 
@@ -16,33 +16,38 @@ export default function Login() {
             return
         }
 
-        localStorage.setItem("user", JSON.stringify({
+        const user = {
             name: "Demo User",
-            loginType
-        }))
+            avatar: "https://i.pravatar.cc/150?img=12",
+            provider: loginType
+        }
 
-        navigate("/dashboard")
+        localStorage.setItem("user", JSON.stringify(user))
+        navigate("/")
+        window.location.reload()
     }
 
     const handleGoogleLogin = () => {
-        localStorage.setItem("user", JSON.stringify({
+        const user = {
             name: "Google User",
-            loginType: "google"
-        }))
+            avatar: "https://i.pravatar.cc/150?img=32",
+            provider: "google"
+        }
 
-        navigate("/dashboard")
+        localStorage.setItem("user", JSON.stringify(user))
+        navigate("/")
+        window.location.reload()
     }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black flex items-center justify-center">
-
             <div className="bg-zinc-900/80 border border-purple-800 p-8 rounded-2xl w-[360px] shadow-xl text-white">
 
                 <h2 className="text-3xl font-bold text-center mb-6 text-purple-500">
                     Welcome Back 🎬
                 </h2>
 
-                {/* Switch Login Type */}
+                {/* LOGIN TYPE SWITCH */}
                 <div className="flex mb-4 bg-black rounded-lg overflow-hidden">
                     <button
                         onClick={() => setLoginType("email")}

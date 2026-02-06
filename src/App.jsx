@@ -9,6 +9,11 @@ import Register from './pages/Register'
 import MyBooking from './pages/MyBooking'
 import Footer from './pages/Footer'
 import Contact from './pages/Contact'
+import Category from "./pages/Category";
+import SeatBooking from './pages/SeatBooking'
+
+
+
 import { seedFirestore } from './seed/seedData'
 const App = () => {
   useEffect(() => {
@@ -24,9 +29,14 @@ const App = () => {
         <Route path='/' element={<Home />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
+        <Route path="/movie/:id/seats" element={<SeatBooking />} />
+        <Route path="/category" element={<Category />} />
         <Route path='/my-booking' element={<MyBooking />} />
         <Route path='/footer' element={<Footer />} />
         <Route path='/contact' element={<Contact />} />
+        
+        
+
       </Routes>
       <Footer />
     </>

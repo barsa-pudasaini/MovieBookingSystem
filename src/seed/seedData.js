@@ -16,7 +16,8 @@ export const MOVIES = [
         rating: 8.8,
         duration: 148,
         status: "now_showing",
-        synopsis: "A thief enters dream worlds to steal secrets.",
+        synopsis:
+            "Dom Cobb is a skilled thief who specializes in stealing valuable secrets from deep within the subconscious during dreams. Offered a chance to have his criminal past erased, Cobb must attempt the impossible task of inception: planting an idea into someone’s mind. As the mission unfolds across multiple dream layers, the line between reality and illusion begins to blur.",
         poster: "https://image.tmdb.org/t/p/w500/9gk7adHYeDvHkCSEqAvQNLV5Uge.jpg",
         trailer: "https://www.youtube.com/embed/YoHD9XEInc0"
     },
@@ -27,7 +28,8 @@ export const MOVIES = [
         rating: 9.0,
         duration: 152,
         status: "now_showing",
-        synopsis: "Batman vs Joker in Gotham City.",
+        synopsis:
+            "Batman faces his greatest psychological and moral challenge when the Joker emerges as a chaotic criminal mastermind in Gotham City. As the Joker pushes the city into anarchy, Batman must confront the limits of justice, heroism, and sacrifice while trying to protect the people he swore to serve.",
         poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
         trailer: "https://www.youtube.com/embed/EXeTwQWrcwY"
     },
@@ -38,7 +40,8 @@ export const MOVIES = [
         rating: 8.6,
         duration: 169,
         status: "now_showing",
-        synopsis: "Astronauts journey through a wormhole to save humanity.",
+        synopsis:
+            "With Earth becoming increasingly uninhabitable, a team of astronauts travels through a mysterious wormhole near Saturn in search of a new home for humanity. As time and space behave unpredictably, personal sacrifices collide with the survival of the human race.",
         poster: "https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
         trailer: "https://www.youtube.com/embed/zSWdZVtXT7E"
     },
@@ -49,7 +52,8 @@ export const MOVIES = [
         rating: 8.4,
         duration: 181,
         status: "now_showing",
-        synopsis: "The Avengers unite for a final battle to undo Thanos' snap.",
+        synopsis:
+            "After the devastating events caused by Thanos, the remaining Avengers regroup for one final mission. They must travel through time, confront their past decisions, and risk everything to restore balance to the universe and bring back what was lost.",
         poster: "https://image.tmdb.org/t/p/w500/ulzhLuWrPK07P1YkdWQLZnQh1JL.jpg",
         trailer: "https://www.youtube.com/embed/TcMBFSGVi1c"
     },
@@ -60,7 +64,8 @@ export const MOVIES = [
         rating: 8.5,
         duration: 132,
         status: "now_showing",
-        synopsis: "A poor family infiltrates a wealthy household.",
+        synopsis:
+            "A struggling family gradually inserts themselves into the lives of a wealthy household by posing as unrelated professionals. As class boundaries blur, hidden tensions and dark secrets surface, leading to consequences that neither family could have predicted.",
         poster: "https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
         trailer: "https://www.youtube.com/embed/5xH0HfJHsaY"
     },
@@ -71,7 +76,8 @@ export const MOVIES = [
         rating: 8.4,
         duration: 122,
         status: "now_showing",
-        synopsis: "A comedian descends into madness in Gotham City.",
+        synopsis:
+            "Arthur Fleck, a struggling comedian living in Gotham City, slowly descends into madness as society repeatedly pushes him aside. Isolated and misunderstood, his transformation into the Joker becomes a chilling exploration of mental health, neglect, and identity.",
         poster: "https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg",
         trailer: "https://www.youtube.com/embed/zAGVQLHvwOY"
     },
@@ -82,7 +88,8 @@ export const MOVIES = [
         rating: 8.1,
         duration: 155,
         status: "now_showing",
-        synopsis: "Paul Atreides becomes central to a galactic war over Arrakis.",
+        synopsis:
+            "Paul Atreides travels with his noble family to the desert planet Arrakis, the only source of a powerful and valuable resource. As political betrayal unfolds, Paul must embrace his destiny while navigating survival, power, and ancient prophecies.",
         poster: "https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg",
         trailer: "https://www.youtube.com/embed/n9xhJrPXop4"
     },
@@ -93,7 +100,8 @@ export const MOVIES = [
         rating: 7.9,
         duration: 195,
         status: "now_showing",
-        synopsis: "Love story aboard the ill-fated Titanic.",
+        synopsis:
+            "A young artist and an upper-class passenger form an unexpected bond aboard the luxurious RMS Titanic. As the ship embarks on its maiden voyage, their relationship is tested by social boundaries and an impending historical disaster.",
         poster: "https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg",
         trailer: "https://www.youtube.com/embed/kVrqfYjkTdQ"
     },
@@ -104,7 +112,8 @@ export const MOVIES = [
         rating: 8.9,
         duration: 180,
         status: "now_showing",
-        synopsis: "The story of J. Robert Oppenheimer and the atomic bomb.",
+        synopsis:
+            "This film chronicles the life of J. Robert Oppenheimer, the physicist who played a key role in developing the atomic bomb. As scientific ambition collides with moral responsibility, the story explores the lasting consequences of world-changing decisions.",
         poster: "https://image.tmdb.org/t/p/w500/ptpr0kGAckfQkJeJIt8st5dglvd.jpg",
         trailer: "https://www.youtube.com/embed/uYPbbksJxIg"
     },
@@ -115,7 +124,8 @@ export const MOVIES = [
         rating: 8.3,
         duration: 156,
         status: "now_showing",
-        synopsis: "Batman investigates corruption in Gotham City.",
+        synopsis:
+            "In his early years as Gotham’s vigilante, Batman uncovers a web of corruption tied to the city’s elite. While pursuing a serial killer known as the Riddler, he is forced to confront uncomfortable truths about his family and the city he protects.",
         poster: "https://image.tmdb.org/t/p/w500/74xTEgt7R36Fpooo50r9T25onhq.jpg",
         trailer: "https://www.youtube.com/embed/mqqft2x_Aa4"
     },
@@ -126,7 +136,8 @@ export const MOVIES = [
         rating: 7.5,
         duration: 115,
         status: "now_showing",
-        synopsis: "A neurosurgeon discovers the hidden world of magic.",
+        synopsis:
+            "After a career-ending accident, a brilliant neurosurgeon searches for healing and instead discovers a hidden world of mysticism. Trained in the mystical arts, Doctor Strange must protect reality from powerful threats beyond human understanding.",
         poster: "https://image.tmdb.org/t/p/w500/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
         trailer: "https://www.youtube.com/embed/HSzx-zryEgM"
     },
@@ -137,12 +148,13 @@ export const MOVIES = [
         rating: 8.7,
         duration: 148,
         status: "now_showing",
-        synopsis: "Peter Parker faces multiverse chaos after identity is revealed.",
+        synopsis:
+            "When Spider-Man’s identity is revealed to the world, Peter Parker seeks help from Doctor Strange to fix his life. The spell goes wrong, opening the multiverse and forcing Peter to face enemies from alternate realities while redefining what it means to be a hero.",
         poster: "https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
         trailer: "https://www.youtube.com/embed/JfVOs4VSpmA"
     }
-    
 ];
+
 
 
 

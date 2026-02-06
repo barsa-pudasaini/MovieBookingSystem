@@ -15,11 +15,10 @@ export default function Register() {
             return
         }
 
-        setError("")
-
         const user = {
-            name: "NewUser",
-            role: "user"
+            name: "New User",
+            avatar: "https://i.pravatar.cc/150?img=48",
+            provider: "register"
         }
 
         localStorage.setItem("user", JSON.stringify(user))
@@ -68,9 +67,7 @@ export default function Register() {
                         />
                     </div>
 
-                    {error && (
-                        <p className="text-red-400 text-sm">{error}</p>
-                    )}
+                    {error && <p className="text-red-400 text-sm">{error}</p>}
 
                     <button
                         type="submit"
