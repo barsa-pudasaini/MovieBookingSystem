@@ -1,48 +1,60 @@
-import { Mail, Lock, Chrome, Phone } from "lucide-react"
-import { Link, useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { Mail, Lock, Chrome, Phone } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { auth, googleProvider } from "../config/Firebase";
+import { signInWithPopup } from "firebase/auth";
 
 export default function Login() {
-    const navigate = useNavigate()
-    const [loginType, setLoginType] = useState("email")
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
+    const navigate = useNavigate();
+    const [loginType, setLoginType] = useState("email");
+    const [emailOrPhone, setEmailOrPhone] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
     const handleLogin = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         if (password.length < 6) {
-            setError("Password must be at least 6 characters")
-            return
+            setError("Password must be at least 6 characters");
+            return;
         }
 
+        // Fake login for email/phone (you can later replace with Firebase Auth email/password)
         const user = {
             name: "Demo User",
             avatar: "https://i.pravatar.cc/150?img=12",
-            provider: loginType
+            provider: loginType,
+            emailOrPhone
+        };
+
+        localStorage.setItem("user", JSON.stringify(user));
+        navigate("/");
+        window.location.reload();
+    };
+
+    const handleGoogleLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            const user = result.user;
+
+            const userData = {
+                name: user.displayName,
+                avatar: user.photoURL,
+                email: user.email,
+                provider: "google"
+            };
+
+            localStorage.setItem("user", JSON.stringify(userData));
+            navigate("/");
+            window.location.reload();
+        } catch (err) {
+            console.log("Google login error:", err.message);
         }
-
-        localStorage.setItem("user", JSON.stringify(user))
-        navigate("/")
-        window.location.reload()
-    }
-
-    const handleGoogleLogin = () => {
-        const user = {
-            name: "Google User",
-            avatar: "https://i.pravatar.cc/150?img=32",
-            provider: "google"
-        }
-
-        localStorage.setItem("user", JSON.stringify(user))
-        navigate("/")
-        window.location.reload()
-    }
+    };
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-black via-zinc-900 to-black flex items-center justify-center">
             <div className="bg-zinc-900/80 border border-purple-800 p-8 rounded-2xl w-[360px] shadow-xl text-white">
-
                 <h2 className="text-3xl font-bold text-center mb-6 text-purple-500">
                     Welcome Back 🎬
                 </h2>
@@ -64,13 +76,14 @@ export default function Login() {
                 </div>
 
                 <form onSubmit={handleLogin} className="space-y-4">
-
                     {loginType === "email" ? (
                         <div className="relative">
                             <Mail className="absolute left-4 top-3 text-purple-400" size={18} />
                             <input
                                 type="email"
                                 placeholder="Email"
+                                value={emailOrPhone}
+                                onChange={(e) => setEmailOrPhone(e.target.value)}
                                 className="w-full bg-black pl-11 py-2 rounded-lg border border-purple-800 outline-none"
                                 required
                             />
@@ -81,6 +94,8 @@ export default function Login() {
                             <input
                                 type="tel"
                                 placeholder="Phone Number"
+                                value={emailOrPhone}
+                                onChange={(e) => setEmailOrPhone(e.target.value)}
                                 className="w-full bg-black pl-11 py-2 rounded-lg border border-purple-800 outline-none"
                                 required
                             />
@@ -124,5 +139,5 @@ export default function Login() {
                 </p>
             </div>
         </div>
-    )
+    );
 }
