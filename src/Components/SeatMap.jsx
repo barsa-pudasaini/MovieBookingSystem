@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Armchair } from 'lucide-react';
 
+
 const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
     const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const cols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -86,4 +87,11 @@ const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
     );
 };
 
-export default SeatMap;
+export default function SeatMap() {
+    return (
+        <div>
+            Seat Map
+        </div>
+    );
+}
+

@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
-import SeatMap from "../components/SeatMap";
+import SeatMap from "../Components/SeatMap";
 
 export default function SeatBooking() {
     const location = useLocation();
