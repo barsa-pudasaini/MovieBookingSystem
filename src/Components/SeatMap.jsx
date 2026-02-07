@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Armchair } from 'lucide-react';
 
-
-const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
+export default function SeatMap({ selectedSeats = [], onSeatSelect }) {
     const rows = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     const cols = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -44,8 +43,8 @@ const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
                                     onClick={() => handleSeatClick(seatId)}
                                     disabled={status === 'booked'}
                                     className={`relative group ${status === 'booked'
-                                            ? 'cursor-not-allowed'
-                                            : 'cursor-pointer hover:scale-110 transition-transform'
+                                        ? 'cursor-not-allowed'
+                                        : 'cursor-pointer hover:scale-110 transition-transform'
                                         }`}
                                 >
                                     <Armchair
@@ -86,6 +85,3 @@ const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
         </div>
     );
 };
-
-export default  SeatMap
-    
