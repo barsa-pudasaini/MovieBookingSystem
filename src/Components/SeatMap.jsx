@@ -87,11 +87,5 @@ const SeatMap = ({ selectedSeats = [], onSeatSelect }) => {
     );
 };
 
-export default function SeatMap() {
-    return (
-        <div>
-            Seat Map
-        </div>
-    );
-}
-
+export default  SeatMap
+    
